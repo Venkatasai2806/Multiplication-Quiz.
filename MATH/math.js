@@ -7,7 +7,7 @@ document.getElementById("start").onclick = function() {
 
     if (playing == true) {
 
-        location.reload(); //reload page
+        location.reload(); 
 
     } else {
 
@@ -43,7 +43,7 @@ for (i = 1; i < 5; i++) {
                     hide("correct");
                 }, 1000);
 
-                //Generate new Q&A
+            
 
                 generateQA();
             } else {
@@ -62,7 +62,7 @@ function startCountdown() {
     action = setInterval(function() {
         timeremaining -= 1;
         document.getElementById("timeremainingvalue").innerHTML = timeremaining;
-        if (timeremaining == 0) { // game over
+        if (timeremaining == 0) { 
             startCountdown();
             show("gameover");
             document.getElementById("gameover").innerHTML = "<p>Game over!</p><p>Your score is " + score + ".</p>";
@@ -99,7 +99,7 @@ function generateQA() {
     var correctPosition = 1 + Math.round(3 * Math.random());
     document.getElementById("m" + correctPosition).innerHTML = correctAnswer; //fill one box with the correct answer
 
-    //fill other boxes with wrong answers
+  
 
     var answers = [correctAnswer];
 
@@ -107,7 +107,7 @@ function generateQA() {
         if (i != correctPosition) {
             var wrongAnswer;
             do {
-                wrongAnswer = (1 + Math.round(9 * Math.random())) * (1 + Math.round(9 * Math.random())); //a wrong answer
+                wrongAnswer = (1 + Math.round(9 * Math.random())) * (1 + Math.round(9 * Math.random())); 
             } while (answers.indexOf(wrongAnswer) > -1)
             document.getElementById("m1" + i).innerHTML = wrongAnswer;
             answers.push(wrongAnswer);
